@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../../../../core/models/course_models.dart';
+import '../../../../core/theme/theme_switcher_button.dart';
 import '../../data/course_data.dart';
 
 /// Écran affichant la liste des chapitres pour une classe donnée.
@@ -28,6 +29,14 @@ class ChapterListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(schoolClass.name),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home_outlined),
+            tooltip: 'Accueil',
+            onPressed: () => context.go('/'),
+          ),
+          const ThemeSwitcherButton(),
+        ],
       ),
       body: AnimationLimiter(
         child: ListView.builder(

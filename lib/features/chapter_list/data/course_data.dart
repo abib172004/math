@@ -9,7 +9,7 @@ final _s1Chapters = [
   Chapter(id: 's1-complexes', title: 'Nombres complexes', hasExercises: true),
   Chapter(
     id: 's1-limites-continuite-derivation',
-    title: 'Analyse',
+    title: 'Limite – Continuité – Dérivation',
     lessonTopics: [
       LessonTopic(id: 's1-limites', title: 'Limites de fonctions', content: limitesContent, isAvailable: true),
       LessonTopic(id: 's1-continuite', title: 'Continuité'),

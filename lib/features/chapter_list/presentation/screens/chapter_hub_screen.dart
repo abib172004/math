@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/models/course_models.dart';
+import '../../../../core/theme/theme_switcher_button.dart';
 import '../../data/course_data.dart';
 
 /// Écran "Hub" qui sert de point d'entrée pour un chapitre.
@@ -27,6 +28,14 @@ class ChapterHubScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(chapter.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home_outlined),
+            tooltip: 'Accueil',
+            onPressed: () => context.go('/'),
+          ),
+          const ThemeSwitcherButton(),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),

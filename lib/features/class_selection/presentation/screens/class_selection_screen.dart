@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../core/models/course_models.dart';
+import '../../../../core/theme/theme_switcher_button.dart';
 import '../../../chapter_list/data/course_data.dart';
 
 /// L'écran d'accueil de l'application, où l'utilisateur choisit sa classe.
@@ -13,6 +14,12 @@ class ClassSelectionScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('SenCours Math'),
+        actions: const [
+          ThemeSwitcherButton(),
+        ],
+      ),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
