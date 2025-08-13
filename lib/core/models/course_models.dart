@@ -1,50 +1,44 @@
 import 'package:flutter/foundation.dart';
 
-/// Classe de base scellée pour tous les types de contenu.
-/// L'utilisation d'une classe scellée garantit que nous gérons tous les cas possibles
-/// dans l'interface utilisateur, ce qui évite les erreurs à l'exécution.
+// --- Core Content Items ---
+// These models represent the smallest pieces of content in a lesson.
+// They are unchanged from the previous version as they are fundamental.
+
 @immutable
 sealed class ContentItem {
   const ContentItem();
 }
 
-/// Un sous-titre dans une section.
 class Heading extends ContentItem {
   final String text;
   const Heading(this.text);
 }
 
-/// Un paragraphe de texte simple.
 class Paragraph extends ContentItem {
   final String text;
   const Paragraph(this.text);
 }
 
-/// Un bloc de définition, qui sera stylisé différemment.
 class Definition extends ContentItem {
   final List<ContentItem> content;
   const Definition({required this.content});
 }
 
-/// Un bloc d'exemple, qui sera aussi stylisé.
 class Example extends ContentItem {
   final List<ContentItem> content;
   const Example({required this.content});
 }
 
-/// Une formule mathématique à rendre avec LaTeX.
 class MathFormula extends ContentItem {
   final String formula;
   const MathFormula(this.formula);
 }
 
-/// Une image à afficher depuis les assets.
 class ContentImage extends ContentItem {
   final String assetPath;
   const ContentImage(this.assetPath);
 }
 
-/// Un tableau de données.
 class ContentTable extends ContentItem {
   final List<String> headers;
   final List<List<String>> rows;
@@ -52,36 +46,62 @@ class ContentTable extends ContentItem {
   const ContentTable({required this.headers, required this.rows, this.caption});
 }
 
-/// Un bloc de correction.
 class Correction extends ContentItem {
     final List<ContentItem> content;
     const Correction({required this.content});
 }
 
-/// Représente une section d'un chapitre (ex: "Limite infinie").
+
+// --- New Hierarchical Models ---
+// These models provide the new structure for Classes -> Chapters -> Topics.
+
+/// Represents a specific topic within a chapter's lesson.
+/// e.g., "Limite en un point" is a topic within the "Limites" chapter.
 @immutable
-class CourseSection {
+class LessonTopic {
+  final String id;
   final String title;
   final List<ContentItem> content;
+  final bool isAvailable;
 
-  const CourseSection({
+  const LessonTopic({
+    required this.id,
     required this.title,
-    required this.content,
+    this.content = const [],
+    this.isAvailable = false,
   });
 }
 
-/// Représente un chapitre complet du cours.
+/// Represents a major chapter in the curriculum.
+/// e.g., "Nombres Complexes"
 @immutable
-class CourseChapter {
+class Chapter {
   final String id;
   final String title;
-  final String series; // ex: "S1", "S2"
-  final List<CourseSection> sections;
+  final List<LessonTopic> lessonTopics;
+  final bool hasExercises;
 
-  const CourseChapter({
+  const Chapter({
     required this.id,
     required this.title,
-    required this.series,
-    required this.sections,
+    this.lessonTopics = const [],
+    this.hasExercises = false,
+  });
+}
+
+/// Represents a school class level.
+/// e.g., "Terminale S1"
+@immutable
+class SchoolClass {
+  final String id;
+  final String name;
+  final String description;
+  final List<Chapter> chapters;
+
+  const SchoolClass({
+    required this.id,
+    required this.name,
+    required this.description,
+    this.chapters = const [],
   });
 }
