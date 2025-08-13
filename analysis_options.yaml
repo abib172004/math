@@ -5,36 +5,12 @@
 # You can see the list of rules here:
 # https://flutter.dev/docs/development/tools/linter#recommended-lints
 #
-# If you want to enable more rules, you can do so below. For example:
-#
-# linter:
-#   rules:
-#     - public_member_api_docs
-#
 # For a full list of available rules, see
 # https://dart-lang.github.io/linter/lints/options/options.html
 
 include: package:flutter_lints/flutter.yaml
 
 linter:
-  # The lint rules applied to this project can be customized in this file.
+  # You can customize the lint rules applied to this project in this file.
   rules:
-    # DEFINITELY DO
-    # - always_declare_return_types
-    # - prefer_single_quotes
-
-    # PREFER
-    # - avoid_redundant_argument_values
-    # - avoid_unused_constructor_parameters
-
-    # STYLE
-    # - prefer_const_constructors
-    # - unnecessary_parenthesis
-
-    # etc.
-    #
-    # For a list of all available rules, see
-    # https://dart-lang.github.io/linter/lints/index.html.
-    #
-    # You can disable a rule by prepending a `#` to the rule name. For example:
-    # # - public_member_api_docs
+    # prefer_single_quotes: true  # Uncomment to enable a sample rule.
