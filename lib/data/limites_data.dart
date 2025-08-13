@@ -38,7 +38,7 @@ final limitesChapterS1S2 = CourseChapter(
         MathFormula(r'\lim_{x \to a} f(x) = L'),
         Example(content: [
           Paragraph(r'La fonction f définie sur ℝ par f(x) = x + 2, tend vers 3 quand x tend vers 1.'),
-          Paragraph(r'Remarque : cette limite n’est pas triviale à démontrer. On peut cependant en proposer une preuve à l’aide de la dérivée de la fonction f (qui est f\'(x) = 1) :'),
+          Paragraph(r"Remarque : cette limite n’est pas triviale à démontrer. On peut cependant en proposer une preuve à l’aide de la dérivée de la fonction f (qui est f''(x) = 1) :"),
           MathFormula(r'\lim_{x \to 1} (x+2) = 1+2 = 3'),
         ]),
         ContentImage('assets/images/limite_finie_point.png'),

@@ -55,5 +55,5 @@ flutter:
 
   # Pour activer les assets (images, animations lottie, etc.)
   assets:
-    - assets/images/
+    # - assets/images/
   # - assets/animations/
