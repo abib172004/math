@@ -23,7 +23,7 @@ class AppTheme {
       foregroundColor: _seedColor,
       elevation: 1,
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 0.5,
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
       shape: RoundedRectangleBorder(
@@ -47,7 +47,7 @@ class AppTheme {
       centerTitle: true,
       elevation: 1,
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       elevation: 1,
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
       shape: RoundedRectangleBorder(
