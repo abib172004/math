@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 /// Centralise la configuration du thème de l'application.
-/// Définit un thème clair et un thème sombre pour une apparence cohérente.
 class AppTheme {
-  // Couleur de base pour le thème.
   static const _seedColor = Colors.indigo;
 
   /// Thème pour le mode clair.
